@@ -6,6 +6,21 @@ import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "./styles.css";
 const NewBlogPost = (props) => {
+  const fetchBlogsPost = async () => {
+    try {
+      let response = await fetch(`http://localhost:3001/blogs`, {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ title: "Fetch POST Request Example" }), // body data type must match "Content-Type" header
+      });
+    } catch (error) {}
+  };
+
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   );
