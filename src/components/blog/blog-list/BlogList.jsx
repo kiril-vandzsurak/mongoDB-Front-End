@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import BlogItem from "../blog-item/BlogItem";
 import { useState, useEffect } from "react";
+import books from "../../../data/posts.json";
 
 const BlogList = (props) => {
   const [blogs, setBlogs] = useState([]);
